@@ -23,16 +23,16 @@ public class Druide extends Gaulois {
 				+ effetPotionMin;
 		String texte = "";
 		if (forcePotion > 7) {
-			texte += "J'ai pr√©par√© une super potion ";
+			texte += "J'ai prÈparÈ une super potion ";
 		} else {
-			texte += "Je n'ai pas trouv√© tous les ingr√©dients, ma potion est seulement ";
+			texte += "Je n'ai pas trouvÈ tous les ingr√©dients, ma potion est seulement ";
 		}
 		parler(texte + "de force " + forcePotion + ".");
 	}
 
 	public void booster(Gaulois gaulois) {
-		if (gaulois.getNom().equals("Ob√©lix")) {
-			parler("Non, Ob√©lix !... Tu n'auras pas de potion magique !");
+		if (gaulois.getNom().equals("ObÈlix")) {
+			parler("Non, ObÈlix !... Tu n'auras pas de potion magique !");
 		} else {
 			gaulois.boirePotion(forcePotion);
 		}

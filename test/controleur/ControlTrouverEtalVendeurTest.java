@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import personnages.Chef;
+import personnages.Gaulois;
 import villagegaulois.Village;
 
 class ControlTrouverEtalVendeurTest {
@@ -15,7 +16,7 @@ class ControlTrouverEtalVendeurTest {
 	
 	@BeforeEach
 	public void initialiserSituation() {
-		village = new Village("le village des irréductibles", 10, 5);
+		village = new Village("le village des irrÃ©ductibles", 10, 5);
 		abraracourcix = new Chef("Abraracourcix", 10, village);
 		village.setChef(abraracourcix);
 		controlTrouverEtalVendeur = new ControlTrouverEtalVendeur(village);
@@ -23,12 +24,15 @@ class ControlTrouverEtalVendeurTest {
 
 	@Test
 	void testControlTrouverEtalVendeur() {
-		fail("Not yet implemented");
+		assertNotNull(controlTrouverEtalVendeur, "Constructeur ne renvoie pas null");
 	}
 
 	@Test
 	void testTrouverEtalVendeur() {
-		fail("Not yet implemented");
+		assertNull(controlTrouverEtalVendeur.trouverEtalVendeur("Vendeur"));
+		Gaulois vendeur = new Gaulois("Vendeur", 5);
+		village.ajouterHabitant(vendeur);
+		village.installerVendeur(vendeur, "produit", 10);
+		assertNotNull(controlTrouverEtalVendeur.trouverEtalVendeur("Vendeur"));
 	}
-
 }

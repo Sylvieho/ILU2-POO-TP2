@@ -15,7 +15,7 @@ class ControlAfficherMarcheTest {
 	
 	@BeforeEach
 	public void initialiserSituation() {
-		village = new Village("le village des irréductibles", 10, 5);
+		village = new Village("le village des irrÃ©ductibles", 10, 5);
 		abraracourcix = new Chef("Abraracourcix", 10, village);
 		village.setChef(abraracourcix);
 		controlAfficherMarche = new ControlAfficherMarche(village);
